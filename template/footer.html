@@ -1,0 +1,23 @@
+<div class="footer">
+        <div class="container">
+            <div class="col-md-6 bottom-menu">
+                <ul>
+                    <li><a href="{% url 'index' %}" {% ifequal res 'index' %}class="active"
+                       data-hover="主页"{% endifequal %}>主页</a></li>
+                <li><a href="{% url 'new:newList' %}" {% ifequal res 'new' %}class="active"
+                       data-hover="新闻中心"{% endifequal %}>新闻中心</a></li>
+                <li><a href="{% url 'chanping:chanpingList' %}" {% ifequal res 'chanping' %}class="active"
+                       data-hover="产品中心"{% endifequal %}>产品中心</a></li>
+                <li><a href="{% url 'chanping:chanpingxiazai' %}"
+                       {% ifequal res 'xiazai' %}class="active" data-hover="下载中心"{% endifequal %}>下载中心</a>
+                </li>
+                <li><a href="{% url 'contact' %}" {% ifequal res 'contact' %}class="active"
+                       data-hover="联系我们"{% endifequal %}>联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 copy-rights">
+                <p> Copyright &copy; 2016 hbysen.com  <a href="http://login.hbysen.com:8000" target="target_blank">All rights reserved.</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>

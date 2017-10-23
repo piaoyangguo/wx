@@ -1,0 +1,32 @@
+<div class="header-top">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+        </div>
+        <div class="top-menu">
+            <span class="menu"> </span>
+            <ul class="cl-effect-15">
+                <li><a href="{% url 'index' %}" {% ifequal res 'index' %}class="active"
+                       data-hover="主页"{% endifequal %}>主页</a></li>
+                <li><a href="{% url 'new:newList' %}" {% ifequal res 'new' %}class="active"
+                       data-hover="新闻中心"{% endifequal %}>新闻中心</a></li>
+                <li><a href="{% url 'chanping:chanpingList' %}" {% ifequal res 'chanping' %}class="active"
+                       data-hover="产品中心"{% endifequal %}>产品中心</a></li>
+                <li><a href="{% url 'chanping:chanpingxiazai' %}"
+                       {% ifequal res 'xiazai' %}class="active" data-hover="下载中心"{% endifequal %}>下载中心</a>
+                </li>
+                <li><a href="{% url 'contact' %}" {% ifequal res 'contact' %}class="active"
+                       data-hover="联系我们"{% endifequal %}>联系我们</a></li>
+            </ul>
+        </div>
+        <!--script-nav-->
+        <script>
+            $("span.menu").click(function () {
+                $(".top-menu ul").slideToggle("slow", function () {
+                });
+            });
+        </script>
+        <!--script-nav-->
+        <div class="clearfix"></div>
+    </div>
+</div>

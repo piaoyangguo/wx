@@ -1,0 +1,13 @@
+
+<div class="product">
+    <div class="product-listy">
+        {% for key, value in productclass.items %}
+            <a href="/chanping/{{ key.id }}/list/"><h3>{{ key }}</h3></a>
+            <ul class="product-list">
+                {% for class in value %}
+                    <li><a href="/chanping/{{ class.id }}/list/">{{ class }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</div>

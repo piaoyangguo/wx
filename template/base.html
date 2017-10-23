@@ -1,0 +1,80 @@
+{% load url from future %}
+{% spaceless %}
+    <!DOCTYPE html>
+
+    {% block html %}
+        <html lang="{{ LANGUAGE_CODE|default:"zh-cn" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+    {% endblock %}
+
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit"/>
+        {#告诉360以极速模式打开#}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {# IE浏览器渲染模式 #}
+
+        <title>{% block title %}{% endblock %}</title>
+
+        {% block metas %}
+            <meta name="keywords" content=""/>
+            <meta name="description" content=""/>
+        {% endblock %}
+
+        {% block blockbots %}
+            <meta name="robots" content="ALL"/>{% endblock %}
+        <meta name="baidu-site-verification" content="hHeWB9NfRO"/>
+        {% block metascache %}
+            {#        <meta http-equiv="Expires" content="-1">#}
+            {#        <meta http-equiv="Cache-Control" content="no-cache">#}
+            {#        <meta http-equiv="Pragma" content="no-cache">#}
+        {% endblock %}
+
+        {% block siteicons %}
+            <link rel="icon" href="/stac/cmstpl/default/images/favicon.ico" type="image/x-icon"/>
+            <link rel="shortcut icon" href="/meda/defaultmedia/soozhu_favicon.ico" type="image/x-icon"/>
+        {% endblock %}
+
+        {% block stylesheet %}{% endblock %}
+        {% block extrastyle %}{% endblock %}
+        {% block extrahead %}{% endblock %}
+        {% block prepubjs %}{% endblock %}
+        {% block javascript %}{% endblock %}
+        {% block extrajs %}{% endblock %}
+        {% block head_special %}
+            <script>
+                var _hmt = _hmt || [];
+                (function () {
+                    var hm = document.createElement("script");
+                    hm.src = "//hm.baidu.com/hm.js?06bb48c3b46f45e6a7c30ef21507a844";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
+        {% endblock %}
+    </head>
+
+    <body {% block bodyclass %}class=""{% endblock %}>
+    {% block mainbody %}
+
+        {% block beforepage %}{% endblock %}
+
+        <div {% block maindivclass %}class="page"{% endblock %}>
+
+            {% block top %}{% endblock %}
+            {% block otheraftertop %}{% endblock %}
+            {% block bodybox %}
+                <div id="box"></div>{% endblock %}
+            {% block footer %}{% endblock %}
+
+        </div>
+    {% endblock %}
+
+    {% block otheraftermain %}{% endblock %}
+
+    {% block statistic %}{% endblock %}
+    {% block kefulayim %}
+
+    {% endblock %}
+    </body>
+    </html>
+{% endspaceless %}
